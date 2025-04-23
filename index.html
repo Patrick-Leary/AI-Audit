@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>NVIDIA DLSS Technology</title>
+  <meta content="Learn about NVIDIA's revolutionary DLSS technology that enhances gaming performance while delivering stunning image quality." name="description">
+  <meta content="NVIDIA, DLSS, AI, gaming, upscaling, frame generation, RTX" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/nvidia-favicon.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Style Overrides -->
+  <style>
+    :root {
+      --primary: #76b900;
+      --bs-body-bg: #121212;
+      --bs-body-color: #121212;
+    }
+
+    .light-background {
+      background-color: #1a1a1a !important;
+    }
+
+    .hero img {
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    .hero:before {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .section {
+      background-color: #1a1a1a;
+    }
+
+    .section-title .resume-title p {
+      color: #d0d0d0;
+    }
+
+    .resume-item {
+      background-color: #242424;
+      border-left: 3px solid var(--primary);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .progress {
+      background-color: #333333;
+    }
+
+    .footer {
+      background-color: #1a1a1a !important;
+      color: #d0d0d0;
+    }
+
+    .img-fluid {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    h2, h3, h4, .resume-title {
+      color: #ffffff !important; 
+      padding-top: 5px;
+    }
+    
+    p, li {
+      color: #e0e0e0;
+    }
+
+    .nvidia-stat {
+      background: #242424;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid var(--primary);
+    }
+
+    .animated-button {
+      box-shadow: 0 4px 15px rgba(118, 185, 0, 0.3);
+      color: #76b900;
+    }
+       
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li style="width: 120px;"><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li style="width: 120px;"><a href="#about"><i class="bi bi-info-circle navicon"></i><span>About</span></a></li>
+        <li style="width: 160px;"><a href="#upscaling"><i class="bi bi-arrows-fullscreen navicon"></i><span>Upscaling</span></a></li>
+        <li style="width: 180px;"><a href="#frame-gen"><i class="bi bi-lightning navicon"></i><span>Frame Gen</span></a></li>
+        <li><a href="#adoption"><i class="bi bi-graph-up navicon"></i><span>Adoption</span></a></li>
+      </ul>
+    </nav>    
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/Hero.jpg" alt="NVIDIA DLSS Technology showcased in a high-fidelity game environment">
+
+      <div class="container" data-aos="zoom-out" style="margin-top: -45vh;">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>AI Audit: Nvidia DLSS</h2>
+            <p><span class="typed" data-typed-items="AI-Upscaled Rendering, Faster Frame Rates, Improved Anti-Aliasing"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Explain the AI Audit project</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-12">
+            <p class="py-3">
+              Introduce DLSS
+            </p>
+            <div class="py-2">
+              <ul>
+                <li>
+                  <h4>Fact 1</h4>
+                  <p>Info info info</p>
+                </li>
+                <li>
+                  <h4>Fact 2</h4>
+                  <p>Info info info</p>    
+                </li>
+                <li>
+                  <h4>Fact 3</h4>
+                  <p>Info info info</p>    
+                </li>
+                <li>
+                  <h4>Fact 4</h4>
+                  <p>Info info info</p>
+                </li>
+              </ul>
+            </div>
+            <p class="py-3">
+              Introduce the writing assignment
+            </p>
+            <div class="text-center" data-aos="fade-right">
+              <a href="#upscaling" class="btn animated-button">
+                Link to writing assignment
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <!-- <a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/" class="btn animated-button" target="_blank">
+                Visit Official DLSS Page
+                <i class="bi bi-arrow-right"></i>
+              </a> -->
+            </div>
+          </div>          
+        </div>
+      </div>
+    </section><!-- /About Section -->
+      
+    <div id="upscaling">
+      <!-- Upscaling Title Section -->
+      <section class="hero section dark-background">
+
+        <img src="assets/img/Upscaling.jpg" alt="DLSS upscaling comparison showing improved image quality">
+
+        <div class="container" data-aos="zoom-out" style="margin-top: -30vh;">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <h2>DLSS Super Resolution</h2>
+              <br>
+              <h3>AI-Powered Upscaling Technology</h3>
+            </div>
+          </div>
+        </div>
+
+      </section><!-- /Upscaling Title Section -->
+
+      <!-- Upscaling Content Section -->
+      <section class="resume section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>DLSS Super Resolution</h2>
+          <p>DLSS Super Resolution uses AI to upscale lower resolution images to higher resolutions, improving performance at the cost of image quality</p>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">How It Works</h3>
+
+              <div class="resume-item pb-0">
+                <h4>Improved Rendering</h4>
+                <!-- <p><em>Renders at lower resolution to boost performance</em></p> -->
+                <ul>
+                  <li>Renders game at a lower resolution (e.g., 4k to 1080p)</li>
+                  <li>Uses less GPU resources, resulting in higher frame rates</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>AI Upscaling</h4>
+                <!-- <p><em>Neural network enhances image quality</em></p> -->
+                <ul>
+                  <li>Runs AI upscaling model on GPU tensor cores</li>
+                  <li>Compares current frame with motion data from previous frames</li>
+                  <li>Reconstructs details to native resolution quality</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>Quality Options (Maybe include exact resolution scaling??)</h4>
+                <ul>
+                  <li>Quality Mode: Highest image quality with moderate performance boost</li>
+                  <li>Balanced Mode: Balance between quality and performance</li>
+                  <li>Performance Mode: Large performance boost with some quality lost</li>
+                  <li>Ultra Performance Mode: Extreme performance with significant quality loss and artifacting</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>Limitations</h4>
+                <ul>
+                  <li>Image quality and artificating</li>
+                  <li>DLSS varies by game</li>
+                </ul>
+              </div>              
+              <div class="col-lg-12" data-aos="fade-right">
+                <a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/" class="btn animated-button" target="_blank">
+                  Learn More About Super Resolution
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-6">
+                  <img src="" class="img-fluid border rounded" loading="lazy" alt="dlss example">
+                </div>
+                <div class="col-lg-6">
+                  <img src="" class="img-fluid border rounded" loading="lazy" alt="another example">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="nvidia-stat">
+                    <h4>Header</h4>
+                    <p>Some info</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="nvidia-stat">
+                    <h4>Header</h4>
+                    <p>More info</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="frame-gen">
+      <!-- Frame Gen Title Section -->
+      <section class="hero section dark-background">
+        <img src="assets/img/FrameGen.jpg" alt="DLSS Frame Generation visualization">
+        <div class="container" data-aos="zoom-out" style="margin-top: -30vh;">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <h2>DLSS Frame Generation</h2>
+              <br>
+              <h3>Up to 3 Generated Frames for Every 1 Rendered Frame</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Frame Gen Content Section -->
+      <section class="resume section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>DLSS Frame Generation</h2>
+          <p>DLSS Frame Generation and Multi Frame Generation use AI to place generated frames in between rendered frames at the cost of latency</p>
+        </div>
+    
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">How It Works</h3>
+    
+              <div class="resume-item pb-0">
+                <h4>Frame Generation Process</h4>
+                <ul>
+                  <li>Analyzes previous frames to predict motion vectors</li>
+                  <li>Generates entirely new frames between rendered frames</li>
+                  <li>Significantly increases frame rate</li>
+                </ul>
+              </div>
+    
+              <div class="resume-item">
+                <h4>Multi Frame Generation</h4>
+                <ul>
+                  <li>Generates up to 3 frames between each rendered frame</li>
+                  <li>Delivers up to 4x frame rate compared to no frame generation</li>
+                </ul>
+              </div>
+    
+              <div class="resume-item">
+                <h4>Compatible Hardware</h4>
+                <ul>
+                  <li>Multi Frame Gen: RTX 5000 series</li>
+                  <li>2x Frame Gen: RTX 4000 and 5000 series</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4>Latency Considerations</h4>
+                <ul>
+                  <li>Increases latency</li>
+                </ul>
+              </div>              
+              <div class="col-lg-12" data-aos="fade-right">
+                <a href="https://www.nvidia.com/en-us/geforce/technologies/dlss/" class="animated-button" target="_blank">
+                  Learn More About Frame Generation
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+    
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-lg-12">
+                  <img src="" class="img-fluid border rounded" loading="lazy" alt="Frame Gen gif?">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-12">
+                  <img src="" class="img-fluid border rounded" loading="lazy" alt="More images or gifs?">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+
+    <div id="adoption">
+      <!-- Public Perception Title Section -->
+      <section class="hero section dark-background">
+        <img src="assets/img/FakeFrames.webp" alt="Visual representation of the DLSS debate">
+        <div class="container" data-aos="zoom-out" style="margin-top: -30vh;">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <h2>Public Perception</h2>
+              <br>
+              <h3>How do Gamers See DLSS?</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="resume section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>The DLSS Controversy</h2>
+          <p>As DLSS technology has evolved, particularly with Frame Generation, a debate has emerged about what constitutes "real" performance</p>
+        </div>
+    
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Critical Perspectives</h3>
+    
+              <div class="resume-item pb-0">
+                <h4>The "Fake Frames" Argument</h4>
+                <ul>
+                </ul>
+              </div>
+    
+              <div class="resume-item">
+                <h4>Image Quality Concerns</h4>
+                <ul>
+                </ul>
+              </div>
+    
+              <div class="resume-item">
+                <h4>Input Latency Issues</h4>
+                <ul>
+                </ul>
+              </div>
+            </div>
+    
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="resume-title">Supportive Perspectives</h3>
+              
+              <div class="resume-item">
+                <h4>Practical Benefits</h4>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- New section for independent testing -->
+          <div class="row mt-5">
+            <div class="col-lg-12">
+              <div class="section-title">
+                <h2>Independent Testing</h2>
+                <p>Something something, I tested dlss</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="resume-item">
+                <h4>Latency Findings</h4>
+                <ul>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-lg-6">
+              <div class="resume-item">
+                <h4>Visual Quality Analysis</h4>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>    
+  </main>
+
+  <footer id="footer" class="footer position-relative dark-background">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>Template by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
