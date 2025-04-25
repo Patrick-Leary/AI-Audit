@@ -98,11 +98,116 @@
       box-shadow: 0 4px 15px rgba(118, 185, 0, 0.3);
       color: #76b900;
     }
-       
+    
+    .topnav {
+      background-color: #1a1a1a;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .topnav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    
+    .topnav .logo {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    
+    .topnav .nav-links {
+      display: flex;
+    }
+    
+    .topnav a {
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    
+    .topnav a:hover {
+      color: var(--primary);
+    }
+    
+    .topnav a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+    
+    /* Adjust main content to account for top navbar */
+    .main {
+      padding-top: 60px;
+    }
+    
+    /* Responsive design for top navbar */
+    @media screen and (max-width: 768px) {
+      .topnav .nav-links {
+        display: none;
+      }
+      
+      .topnav .icon {
+        display: block;
+        font-size: 24px;
+      }
+      
+      .topnav.responsive {
+        height: auto;
+      }
+      
+      .topnav.responsive .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .topnav.responsive .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+      
+      .topnav.responsive a {
+        text-align: left;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body class="index-page">
+
+  <!-- Top Navigation Bar -->
+  <div class="topnav" id="myTopnav">
+    <div class="container">
+      <a href="index.html" class="logo">AI Audit: NVIDIA DLSS</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="history.html">History</a>
+        <a href="rhetoric.html">Rhetoric</a>
+        <a href="data.html">Data</a>
+        <a href="materials.html">Materials</a>
+        <a href="consequences.html">Consequences</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <i class="bi bi-list"></i>
+      </a>
+    </div>
+  </div>
+
 
   <header id="header" class="header d-flex flex-column justify-content-center">
 
