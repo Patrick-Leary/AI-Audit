@@ -306,13 +306,17 @@
           <div class="row">
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="resume-item">
+                <h4>Ray Tracing</h4>
+                <p>In 2018, NVIDIA rebranded their GeForce GTX gaming graphics cards to GeForce RTX graphics cards. This change was to coincide with the upcoming ray tracing technology, which simulated the bounces of rays of light, but came with a massive performance cost.</p>
+              </div>
+              <div class="resume-item">
                 <h4>Initial Model</h4>
-                <p>DLSS 1.0 was NVIDIA's first attempt at using deep learning to upscale lower-resolution images to higher resolutions. Launched alongside the RTX 20-series GPUs in 2018, it aimed to offset the performance cost of ray tracing by rendering at a lower resolution and then using AI to upscale the image.</p>
+                <p>DLSS 1.0 was NVIDIA's first attempt at using deep learning to upscale lower-resolution images to higher resolutions. Launched with the RTX 20-series GPUs in 2018, it aimed to offset the performance cost of ray tracing by rendering at a lower resolution and then using AI to upscale the image.</p>
                 <ul>
                   <li>Required per-game training on NVIDIA's supercomputers</li>
                   <li>Often resulted in blurry images compared to native resolution</li>
                   <li>Available in only a handful of games initially</li>
-                  <li>Only compatible with the lastest generation of GPUs</li>
+                  <li>Only compatible with the latest generation of GPUs</li>
                 </ul>
               </div>
             </div>
@@ -320,9 +324,11 @@
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="resume-item">
                     <h4>Technical Approach</h4>
-                    <p>It used a convolutional autoencoder to compare lower resoltuion images with ultra high resolution 16k images. The model was trained on a per-game basis, limiting the number of games at launch.</p>
+                    <p>DLSS used a convolutional autoencoder to compare lower resolution images with ultra high resolution 16k images. The model was trained on a per-game basis, limiting the number of games at launch.</p>
                 </div>
-              <img src="assets/img/DLSS1.png" class="img-fluid border rounded" loading="lazy" alt="DLSS 1.0">
+              <div class="nvidia-stat">
+                <img src="assets/img/DLSS1.png" class="img-fluid border rounded" loading="lazy" alt="DLSS 1.0">
+              </div>
             </div>
           </div>
         </div>
@@ -360,19 +366,18 @@
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="resume-item">
                 <h4>Improvements</h4>
-                <p>Released in 2020, DLSS 2 showed enhancements over the previous version in several departments.</p>
+                <p>Released in 2020, DLSS 2 showed enhancements over the previous version in several departments. It allowed many more games to feature the technology and performed better than its previous version. Due to its strong upscaling capabilities and availability across many games, DLSS ballooned in popularity in the early 2020s.</p>
                 <ul>
                   <li>No longer required per-game training</li>
                   <li>Used game engine motion vectors for increased accuracy</li>
                   <li>Wider game support</li>
-                  <li>Available to more gamers</li>
+                  <li>Available on more graphics cards</li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="resume-item">
-                    <h4>NVIDIA DLSS 2 Marketing</h4>
-                    <img src="assets/img/DLSS2.jpg" class="img-fluid border rounded" loading="lazy" alt="DLSS 2.0">
+                <div class="nvidia-stat">
+                  <img src="assets/img/DLSS2.jpg" class="img-fluid border rounded" loading="lazy" alt="DLSS 2.0">
                 </div>
             </div>
           </div>
@@ -413,8 +418,8 @@
                 <h4>Frame Generation</h4>
                 <p>Launched with the RTX 40-series GPUs in 2022, DLSS 3 added a new technology: AI-powered frame generation, nearly doubling frame rates.</p>
                 <ul>
-                  <li>Uses Optical Flow Accelerator hardware in RTX 40-series GPUs</li>
-                  <li>Can double frame rates in some cases</li>
+                  <li>Used Optical Flow Accelerator hardware in RTX 40-series GPUs</li>
+                  <li>Could double frame rates in some cases</li>
                   <li>Exclusive to RTX 40-series GPUs</li>
                 </ul>
               </div>
@@ -466,11 +471,11 @@
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">              
               <div class="resume-item">
                 <h4>The Latest Model</h4>
-                <p>Released in early 2025 with the 50-series GPUs, DLSS 4 shows the biggest jump in technology since 2020. NVIDIA announced multi frame generation (MFG), an enhanced model for the older frame generation, and a new transformer-based upscaling model.</p>
+                <p>Released in early 2025 with the 50-series GPUs, DLSS 4 showed the biggest jump in technology since version 2.0 in 2020. NVIDIA announced multi frame generation (MFG), an enhanced model for the older frame generation, and a new transformer-based upscaling model.</p>
                 <ul>
                   <li>MFG allowed 50-series GPUs to generate up to 3 frames for every 1 rendered frame</li>
-                  <li>Enchanced frame generation for 40-series GPUs reduced memory usage and increased visual fidelity</li>
-                  <li>Transformer model for all RTX cards (20-series and newer) drastically increaseed quality of upscaling</li>
+                  <li>Enhanced frame generation for 40-series GPUs reduced memory usage and increased visual fidelity</li>
+                  <li>Transformer model for all RTX cards (20-series and newer) drastically increased quality of upscaling</li>
                   <li>Better handling of fine details like hair and foliage, especially in motion</li>
                 </ul>
               </div>
@@ -502,12 +507,13 @@
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
 
               <div class="resume-item">
-                <p>Info about NVIDIA's "performance" claims.</p>
+                <h4>NVIDIA's Performance Claims</h4>
+                <p>NVIDIA has claimed that 50-series GPUs significantly outperform older generation cards. However, NVIDIA's metric for performance is frames per second, rather than total compute power. This led to the statement that the 5070, a midrange card, had the same performance as the 4090, the previous generation's flagship card. This was because the 5070 allowed for multi frame generation, so while the 5070 could technically reach the same frame rate as the 4090, it had worse input latency and visual artifacts.</p>
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-              <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/" title="NVIDIA DLSS 4 Technology Demonstration" allowfullscreen></iframe>
+              <div class="nvidia-stat">
+                <img src="assets/img/SamePerformance.webp" class="img-fluid border rounded" loading="lazy" alt="Jensen Huang announcing 5070 has the same performance as 4090">
               </div>
             </div>
           </div>
@@ -517,7 +523,8 @@
               <div class="col-lg-12">
                 <div class="resume-item">
                   <h4>Future Implications</h4>
-                  <p></p>
+                  <p>DLSS has shown massive improvements over the last half decade, significantly improving performance for only a small decrease in quality. While there are several valid criticisms of NVIDIA's DLSS, such as reductions in visual fidelity and increasing latency with frame generation, this rapid improvement in technology has allowed many gamers to keep their older graphics cards for longer and use upscaling instead. A concern for many, though, is that game studios will use DLSS and frame generation as a crutch for the lack of game optimization, decreasing game quality overall. However, having DLSS and other upscaling technology as an option to use will always be a benefit to gamers.</p>
+                  <br>
                 </div>
               </div>
             </div>
