@@ -304,12 +304,12 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
               <div class="resume-item">
                 <h4>Ray Tracing</h4>
                 <p>In 2018, NVIDIA rebranded their GeForce GTX gaming graphics cards to GeForce RTX graphics cards. This change was to coincide with the upcoming ray tracing technology, which simulated the bounces of rays of light but came with a massive performance cost.</p>
               </div>
-              <div class="resume-item">
+              <div class="resume-item" data-aos="fade-right" data-aos-delay="800">
                 <h4>Initial Model</h4>
                 <p>DLSS 1.0 was NVIDIA's first attempt at using deep learning to upscale lower-resolution images to higher resolutions. Launched with the RTX 20-series GPUs in 2018, it aimed to offset the performance cost of ray tracing by rendering at a lower resolution and then using AI to upscale the image.</p>
                 <ul>
@@ -321,12 +321,12 @@
               </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1200">
                 <div class="resume-item">
                     <h4>Technical Approach</h4>
                     <p>DLSS used a convolutional autoencoder to compare lower resolution images with ultra high resolution 16k images. The model was trained on a per-game basis, limiting the number of games at launch.</p>
                 </div>
-              <div class="nvidia-stat">
+              <div class="nvidia-stat" data-aos="fade-left" data-aos-delay="1600">
                 <img src="assets/img/DLSS1.png" class="img-fluid border rounded" loading="lazy" alt="DLSS 1.0">
               </div>
             </div>
@@ -413,7 +413,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
               <div class="resume-item">
                 <h4>Frame Generation</h4>
                 <p>Launched with the RTX 40-series GPUs in 2022, DLSS 3 added a new technology: AI-powered frame generation, nearly doubling frame rates.</p>
@@ -430,7 +430,7 @@
                 <br>
               </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="600">
               <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/" title="NVIDIA DLSS 3 Frame Generation Explained" allowfullscreen></iframe>
               </div>
@@ -468,7 +468,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">              
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">              
               <div class="resume-item">
                 <h4>The Latest Model</h4>
                 <p>Released in early 2025 with the 50-series GPUs, DLSS 4 showed the biggest jump in technology since version 2 in 2020. NVIDIA announced multi frame generation (MFG), an enhanced model for the older frame generation, and a new transformer-based upscaling model.</p>
@@ -480,10 +480,10 @@
                 </ul>
               </div>
 
-              <div class="resume-item">
+              <div class="resume-item" data-aos="fade-up" data-aos-delay="400">
                 <h3 class="resume-title mt-4">CNN vs Transformer Model Comparison</h3>
                 <div class="comparison-container">
-                  <div class="comparison-item">
+                  <div class="comparison-item" data-aos="fade-left" data-aos-delay="1200">
                     <div class="nvidia-stat mt-3">
                       <h4>Previous CNN Model</h4>
                       <p>Convolutional Neural Networks work well processing patches of information but struggle with understanding relationships between distant parts of an image, causing details to be lost.</p>
@@ -491,7 +491,7 @@
                     </div>
                   </div>
                   
-                  <div class="comparison-item">
+                  <div class="comparison-item" data-aos="fade-right" data-aos-delay="1600">
                     <div class="nvidia-stat mt-3">
                       <h4>New Transformer Model</h4>
                       <p>The transformer architecture understands relationships between all pixels in an image, allowing for the preservation of fine details, better image reconstruction, and fewer artifacts and ghosting.</p>
