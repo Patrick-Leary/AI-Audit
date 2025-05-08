@@ -1,14 +1,607 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>DLSS Materials</title>
+    <meta content="Analyzing NVIDIA's marketing rhetoric for DLSS technology through different versions."
+        name="description">
+    <meta content="NVIDIA, DLSS, rhetoric, marketing, AI, gaming, upscaling" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/nvidia-favicon.png" rel="icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Style Overrides -->
+    <style>
+        :root {
+            --primary: #76b900;
+            --bs-body-bg: #121212;
+            --bs-body-color: #121212;
+            --accent-color: #76b900;
+            --nav-hover-color: #76b900;
+            --nav-dropdown-hover-color: #76b900;
+        }
+
+        .light-background {
+            background-color: #1a1a1a !important;
+        }
+
+        .hero img {
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .hero:before {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .section {
+            background-color: #1a1a1a;
+            padding-bottom: 15px !important;
+        }
+
+        .section-diff {
+            background-color: #000000;
+            padding-bottom: 15px;
+        }
+
+        .section-title .resume-title p {
+            color: #d0d0d0;
+        }
+
+        .resume-item {
+            background-color: #242424;
+            border-left: 3px solid var(--primary);
+            /* padding: 15px; */
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        .image-section {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .progress {
+            background-color: #333333;
+        }
+
+        .footer {
+            background-color: #1a1a1a !important;
+            color: #d0d0d0;
+        }
+
+        .img-fluid {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h2,
+        h3,
+        h4,
+        .resume-title {
+            color: #ffffff !important;
+            padding-top: 5px;
+        }
+
+        p,
+        li {
+            color: #e0e0e0;
+        }
+
+        .nvidia-stat {
+            background: #242424;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .animated-button {
+            box-shadow: 0 4px 15px rgba(118, 185, 0, 0.3);
+            color: #76b900;
+        }
+
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .comparison-item {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .timeline-indicator {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .timeline-indicator .dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .topnav {
+            background-color: #1a1a1a;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .topnav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .topnav .logo {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .topnav .nav-links {
+            display: flex;
+        }
+
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .topnav a:hover {
+            color: var(--primary);
+        }
+
+        .topnav a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        .main {
+            padding-top: 60px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .topnav .nav-links {
+                display: none;
+            }
+
+            .topnav .icon {
+                display: block;
+                font-size: 24px;
+            }
+
+            .topnav.responsive {
+                height: auto;
+            }
+
+            .topnav.responsive .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topnav.responsive .nav-links {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .topnav.responsive a {
+                text-align: left;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-<body>
-    <div style="text-align: center;">
-        <h1>Page Under Contruction</h1>
-        <a href="index.html" style="text-align: center;"><h2>Back</h2></a>
+
+<body class="index-page">
+    <!-- Nav bar -->
+    <div class="topnav" id="myTopnav">
+        <div class="container">
+            <a href="index.html" class="logo">AI Audit: NVIDIA DLSS</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="history.html">History</a>
+                <a href="rhetoric.html" class="active">Rhetoric</a>
+                <a href="data.html">Data</a>
+                <a href="materials.html">Materials</a>
+                <a href="consequences.html">Consequences</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+                <i class="bi bi-list"></i>
+            </a>
+        </div>
     </div>
+
+    <!-- side bar for page -->
+    <header id="header" class="header d-flex flex-column justify-content-center">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li style="width: 120px;"><a href="#"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+                <li style="width: 140px;"><a href="#flow1"><i class="bi bi-gear-fill navicon"></i><span>Training/ Extraction</span></a></li>
+                <li style="width: 150px;"><a href="#flow2"><i class="bi bi-tools navicon"></i><span>Manufacture</span></a></li>
+                <li style="width: 140px;"><a href="#flow3"><i class="bi bi-puzzle-fill navicon"></i><span>Integration</span></a></li>
+                <li style="width: 140px;"><a href="#flow4"><i class="bi bi-recycle navicon"></i><span>Recycling</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- page starts here -->
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background">
+            <img src="assets/img/geforce-resizeable-bar.jpg" alt="NVIDIA Materials and Labors">
+            <div class="container" data-aos="zoom-out" style="margin-top: -45vh;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <h2>DLSS Materials</h2>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Hero Section -->
+
+        <!-- flow level 1 -->
+        <div id="flow1">
+            <section class="resume section">
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>DLSS: Behind the Scenes</h2>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <!-- TRAINING DLSS -->
+                        <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                            <div class="resume-item">
+                                <h4>Training DLSS <i class="bi bi-graph-up me-2" style="color: #76b900;"></i></h4>
+
+                                <p>NVIDIA <a
+                                        href="https://www.pcgamer.com/hardware/graphics-cards/turns-out-theres-a-big-supercomputer-at-nvidia-running-24-7-365-days-a-year-improving-dlss-and-its-been-doing-that-for-six-years/">reportedly</a>
+                                    used
+                                    a supercomputer for 6+ years to train and refine DLSS.</p>
+                                <ul>
+                                    <li><a href="https://blogs.nvidia.com/blog/eos/">Eos supercomputer</a> (unveiled
+                                        2024) is likely involved.</li>
+                                </ul>
+
+
+                                <p>Such training requires massive volumes of water. It also requires a steady supply of
+                                    electricity.
+                                <ul>
+                                    <li>Specific statistics (for DLSS) have not been disclosed by NVIDIA,</li>
+                                    <li>Consumption is <a
+                                            href="https://gtg.benabraham.net/nvidia-dlss-carbon-impacts-whats-the-cost-benefit-of-upscaling-frame-generation-and-neutral/">speculated</a>
+                                        to be less than large-scale LLM like ChatGPT,
+                                        however still signifcant.</li>
+                                </ul>
+                                </li>
+                            </div>
+                        </div>
+
+                        <!-- EXTRACTION -->
+                        <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                            <div class="resume-item">
+                                <h4>Mineral Extraction <i class="bi bi-hammer me-2" style="color: #76b900;"></i></h4>
+                                <p>NVIDIA chips - like others - require mined elements such as alumuminum, tungsten and
+                                    gold. NVIDIA
+                                    issued a <a
+                                        href="https://images.nvidia.com/content/includes/gcr/pdf/nvidia-responsible-minerals-policy.pdf">responsibility
+                                        statement</a> in 2022 [LINK], however ethical and environmental
+                                    <a href="https://ewastemonitor.info/the-global-e-waste-monitor-2024/">concerns</a>
+                                    still
+                                    remain:
+                                </p>
+                                <ul>
+                                    <li>There is a lack of regulatory frameworks and authorities in mining regions,
+                                        often low-income countries.</li>
+                                    <li>Labor is usually compensated below standards and are exposed to hazardous
+                                        conditions without precautions.</li>
+                                    <li>Environments can often be damaged permanently during the extraction processes.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-arrow-down-circle-fill fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-arrow-down-circle-fill fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- flow level 2 -->
+        <div id="flow2">
+            <section class="resume section image-section"
+                style="background-image: url('/assets/img/Samsung_Fab_ENRwebready.jpg');">
+                <!-- <div class="container section-title" data-aos="fade-up">
+                    <h2>DLSS: Behind the Scenes</h2>
+                </div> -->
+
+                <div class="container">
+                    <div class="row">
+                        <!-- ARROW-->
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-arrow-down-circle-fill fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                        </div>
+
+                        <!-- MANUFACTURE -->
+                        <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                            <div class="resume-item">
+                                <h4>RTX Chip Manufacture <i class="bi bi-cpu me-2" style="color: #76b900;"></i></h4>
+                                <p>Third parties TSMC and Samsung have historically provided semiconductor wafers for
+                                    RTX GPU production at NVIDIA. Throughout development, electricity and
+                                    <a
+                                        href="https://www.weforum.org/stories/2024/07/the-water-challenge-for-semiconductor-manufacturing-and-big-tech-what-needs-to-be-done/#:~:text=Water%20is%20crucial%20at%20all,1%2C000%20gallons%20of%20ultrapure%20water"><i>"ultrapure"</i>
+                                        water are used in high amounts.</a>
+                                </p>
+
+                                <ul>
+                                    <li>1,500 gallons of raw water → 1,000 gallons ultrapure water.</li>
+                                    <li>Factories globally can consume water equal to a city with 7.5M population.</li>
+                                    <li>Because of third party involvement it is difficult to track or
+                                        estimate amounts used specifically for RTX production.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center"></div>
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-arrow-down-circle-fill fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- flow level 3 -->
+        <div id="flow3">
+            <section class="resume section">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col lg-2"></div>
+                        <!-- INTEGRATION -->
+                        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                            <div class="resume-item">
+                                <h4>Integration <i class="bi bi-puzzle-fill me-2" style="color: #76b900;"></i></h4>
+
+                                <p>DLSS models require a specific hardware component: <i>"tensor-cores"</i>, found
+                                    exclusively in NVIDIA's RTX-series chips. This <b>closed ecosystem
+                                    </b>, forces users to purchase NVIDIA products.
+                                </p>
+                                <ul>
+                                    <li>Only the latest RTX 50 GPU supports full features of the DLSS 4 model.
+                                        Users are forced to upgrade even if they already own a RTX-series unit.</li>
+                                </ul>
+
+                                <p>This increases the rate at which such 'older' chips are discarded. The hardware stil
+                                    has functionality, however users may prefer to switch for imrpoved performance.</p>
+                                <ul>
+                                    <li>Discarded hardware is then disposed of in recycling programs or ends up in
+                                        landfills. </li>
+                                    <li>Despite <a
+                                            href="https://www.nvidia.com/en-us/sustainability/product-recycling/">NVIDIA's
+                                            recycling programs</a> - currently none for the RTX products -
+                                        materials ultimately end up in landfills or can be sent to Inefficient recycling
+                                        facilities.</li>
+                                </ul>
+                                </li>
+
+                            </div>
+                        </div>
+                        <div class="col lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-arrow-down-circle-fill fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-arrow-down-circle-fill fs-1" style="color:#76b900"></i>
+                            <i class="bi bi-three-dots fs-1" style="color:#76b900"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- flow level 4 -->
+        <div id="flow4">
+            <section class="resume section image-section" style="background-image: url('/assets/img/E-Waste.png');">
+                <!-- <div class="container section-title" data-aos="fade-up">
+                        <h2>DLSS: Behind the Scenes</h2>
+                    </div> -->
+
+                <div class="container">
+                    <div class="row">
+                        <!-- RECYCLING -->
+                        <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                            <div class="resume-item">
+                                <h4>Recycling <i class="bi bi-recycle me-2" style="color: #76b900;"></i></h4>
+
+                                <p>Often only few materilas are worth any value to recycle, such as gold, silver, few
+                                    rare earth elements and sometimes plastics. According to
+                                    a <a href="https://ewastemonitor.info/the-global-e-waste-monitor-2024/">UN
+                                        report</a>, 5 billion KGs of e-waste were produced in 2022. Of this, only 22%
+                                    was
+                                    formally accounted for.</p>
+                                <ul>
+                                    <li>That is around the weight of 250M stainless steal spoons, of which only 55M were
+                                        recovered.</li>
+                                </ul>
+
+                                <p>Recycling processes - often operated overseas - can be inefficient with toxic
+                                    materials leeching into soil and water. Some regions offer cheap labor that allow
+                                    cost cutting, though come with poor regulations.
+                                <ul>
+                                    <li>Dumping waste in foreign land has long been a topic of ethical concern due to
+                                        labor exploitations.</li>
+                                    <li>Ultimately, even such recycling can damage the environment.</li>
+                                </ul>
+                                </li>
+                            </div>
+                        </div>
+
+                        <!-- LANDFILL -->
+                        <div class="col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                            <div class="resume-item">
+                                <h4>Landfills <i class="bi bi-trash3-fill me-2" style="color: #76b900;"></i></h4>
+                                <p>Because often materials are non-biodegradable, landfills are not a permanent or
+                                    effective
+                                    solution. However, few
+                                    landfills may have processes that can allow repurposing, such as second-hand
+                                    use, melting, etc. </p>
+
+                                <ul>
+                                    <li>Incineration processes release toxic pollutants into
+                                        the atmosphere, ultimately damaging the envrionment.</li>
+                                    <li>Landfills too are often found in poorer regions, where infrastructure is not
+                                        built to deal with consequences or clean-up efforts.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- hero section here, if added -->
+
+        <!-- <div id="claims">
+            <section class="resume section">
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Primary Claims Made by NVIDIA</h2>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-2" data-aos="fade-up" data-aos-delay="100">
+                            <div class="resume-item">
+                                <ul>
+                                    <li>DLSS 4 is superior to native rendering</li>
+                                    <li>NVIDIA's AI is constantly learning and developing to improve its abilities</li>
+                                    <li>"Maximize Quality with AI" - DLSS 4 advert</li>
+                                    <li>Enhanced image quality</li>
+                                    <li>Heightened responsiveness</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> -->
+
+    </main>
+
+    <footer id="footer" class="footer position-relative dark-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Template by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        function toggleNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
+
 </html>
