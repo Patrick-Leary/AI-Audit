@@ -1,3 +1,5 @@
+// (Some) code provided by AI
+
 // Quiz state management
 const quizState = {
     currentQuestion: 0,
@@ -30,7 +32,7 @@ const quizState = {
         nativeImage: 'assets/img/quiz/Native5.jpg',
       }
     ],
-    // Store the current position of DLSS image (A or B) for each question
+
     currentDlssPosition: ''
   };
   

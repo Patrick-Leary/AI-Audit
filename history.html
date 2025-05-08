@@ -26,7 +26,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Style Overrides -->
+  <!-- Style Overrides (provided by AI) -->
   <style>
     :root {
       --primary: #76b900;
@@ -302,8 +302,8 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="resume-item">
+            <div class="col-lg-6">
+              <div class="resume-item" data-aos="fade-up" data-aos-delay="400">
                 <h4>Ray Tracing</h4>
                 <p>In 2018, NVIDIA rebranded their GeForce GTX gaming graphics cards to GeForce RTX graphics cards. This change was to coincide with the upcoming ray tracing technology, which simulated the bounces of rays of light but came with a massive performance cost.</p>
               </div>
@@ -319,12 +319,12 @@
               </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="1200">
-                <div class="resume-item">
+            <div class="col-lg-6">
+                <div class="resume-item" data-aos="fade-up" data-aos-delay="1600">
                     <h4>Technical Approach</h4>
                     <p>DLSS used a convolutional autoencoder to compare lower resolution images with ultra high resolution 16k images. The model was trained on a per-game basis, limiting the number of games at launch.</p>
                 </div>
-              <div class="nvidia-stat" data-aos="fade-left" data-aos-delay="1600">
+              <div class="nvidia-stat" data-aos="fade-left" data-aos-delay="2000">
                 <img src="assets/img/DLSS1.png" class="img-fluid border rounded" loading="lazy" alt="DLSS 1.0">
               </div>
             </div>
@@ -364,7 +364,7 @@
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div class="resume-item">
                 <h4>Improvements</h4>
-                <p>Released in 2020, DLSS 2 showed enhancements over the previous version in several departments. It allowed many more games to feature the technology and performed better than its previous version. Due to its strong upscaling capabilities and availability across many games, DLSS ballooned in popularity in the early 2020s.</p>
+                <p>Released in 2020, DLSS 2 showed enhancements over the previous version in several ways. It allowed many more games to feature the technology and had visual improvements compared to its previous version. Due to its strong upscaling capabilities and availability across many games, DLSS ballooned in popularity in the early 2020s.</p>
                 <ul>
                   <li>No longer required per-game training</li>
                   <li>Used game engine motion vectors for increased accuracy</li>
@@ -424,7 +424,7 @@
 
               <div class="resume-item">
                 <h4>Limitations and Controversies</h4>
-                <p>While DLSS 3 frame generation significantly boosted frame rates, it introduced additional latency and could sometimes produce visual artifacts. NVIDIA claimed a doubling in performance, but generated frames don't respond to player input; instead, they just increase the motion fluidity. Despite these criticisms, DLSS 3 has been widely adopted in modern AAA games.</p>
+                <p>While DLSS 3 frame generation significantly boosted frame rates, it introduced additional latency and could sometimes produce visual artifacts. NVIDIA claimed a doubling in performance, but generated frames don't respond to player input; instead, they increase the motion fluidity. Despite these criticisms, DLSS 3 has been widely adopted in modern AAA games.</p>
                 <br>
               </div>
             </div>
@@ -492,11 +492,13 @@
                   <div class="comparison-item" data-aos="fade-right" data-aos-delay="1600">
                     <div class="nvidia-stat mt-3">
                       <h4>New Transformer Model</h4>
-                      <p>The transformer architecture understands relationships between all pixels in an image, allowing for the preservation of fine details, better image reconstruction, and fewer artifacts and ghosting.</p>
+                      <p>The transformer architecture understands relationships between all pixels in an image, significantly improving visual detail, especially in motion.</p>
                       <img src="assets/img/BackpackFull.png" class="img-fluid border rounded" loading="lazy" alt="DLSS with Transformer Model">
                     </div>
                   </div>
                 </div>
+                <p>The above images show a zoomed in shot of a backpack while in motion with the old CNN model and the new transformer model.</p>
+                <br>
               </div>
             </div>
           </div>
